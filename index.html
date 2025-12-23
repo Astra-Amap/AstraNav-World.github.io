@@ -49,7 +49,7 @@
             height: 100%;
 
             /* 用星云图做背景 */
-            background-image: url("images/bg.jpeg");
+            background-image: url("images/zermatt.jpg");
             background-size: cover;          /* 充满全屏 */
             background-position: center;     /* 居中裁剪 */
             background-repeat: no-repeat;
@@ -2736,6 +2736,23 @@
             width: 100%;
             margin: 0;
             padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .abstract-text-1 {
+            font-size: 1.5rem;
+            line-height: 1.7;
+            color: #ffffff;
+            text-align: left;         /* 正文保持左对齐更易读 */
+            width: 100%;
+            margin: 0;
+            padding: 1.6rem;
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
             border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 20px;
@@ -6869,13 +6886,13 @@
                     <span class="logo-sparkle logo-sparkle-3">⭐️</span>
                 </div> -->
             </div>
-            <h1 class="hero-title">AstraNav-World ✨</h1>
+            <h1 class="hero-title">AstraNav-Memory ✨</h1>
         </div>
         
         <!-- Paper信息 - 紧凑布局 -->
         <div class="paper-info-compact">
             <h3 class="paper-title-main">
-                World Model for Foresight Control and Consistency
+                Contexts Compression for Long Memory
             </h3>
             <a href="https://arxiv.org/pdf/2509.22548" target="_blank" rel="noopener noreferrer">
                 <div class="paper-badge-fancy">📄 Research Paper</div>
@@ -6885,24 +6902,24 @@
         <!-- 作者信息 -->
         <div class="authors-section">
             <p class="authors">
-                <span class="author"><a>Junjun Hu</a><sup>1</sup></span>,
+                <!-- <span class="author"><a>Junjun Hu</a><sup>1</sup></span>, -->
                 <!-- <span class="author"><a>Junjun Hu</a><sup>1,2,*</sup></span>, -->
-                <span class="author"><a>Jintao Chen</a><sup>1,2</sup></span>,
-                <span class="author"><a>Haochen Bai</a><sup>1</sup></span>,
-                <span class="author"><a>Minghua Luo</a><sup>1</sup></span>,
-                <span class="author"><a>Shichao Xie</a><sup>1</sup></span>,
-                <span class="author"><a>Ziyi Chen</a><sup>1</sup></span>,
-                <span class="author"><a>Fei Liu</a><sup>1</sup></span>,
-                <span class="author"><a>Zedong Chu</a><sup>1</sup></span>,
-                <span class="author"><a>Xinda Xue</a><sup>1,2</sup></span>,
-                <span class="author"><a>Botao Ren</a><sup>1</sup></span>,
-                <span class="author"><a>Xiaolong Wu</a><sup>1</sup></span>,
-                <span class="author"><a>Mu Xu</a><sup>1</sup></span>,
-                <span class="author"><a>Shanghang Zhang</a><sup>2</sup></span>,
+                <!-- <span class="author"><a>Jintao Chen</a><sup>1,2</sup></span>, -->
+                <!-- <span class="author"><a>Haochen Bai</a><sup>1</sup></span>, -->
+                <!-- <span class="author"><a>Minghua Luo</a><sup>1</sup></span>, -->
+                <!-- <span class="author"><a>Shichao Xie</a><sup>1</sup></span>, -->
+                <!-- <span class="author"><a>Ziyi Chen</a><sup>1</sup></span>, -->
+                <!-- <span class="author"><a>Fei Liu</a><sup>1</sup></span>, -->
+                <!-- <span class="author"><a>Zedong Chu</a><sup>1</sup></span>, -->
+                <!-- <span class="author"><a>Xinda Xue</a><sup>1,2</sup></span>, -->
+                <!-- <span class="author"><a>Botao Ren</a><sup>1</sup></span>, -->
+                <!-- <span class="author"><a>Xiaolong Wu</a><sup>1</sup></span>, -->
+                <!-- <span class="author"><a>Mu Xu</a><sup>1</sup></span>, -->
+                <!-- <span class="author"><a>Shanghang Zhang</a><sup>2</sup></span>, -->
             </p>
             <p class="affiliations">
                 <sup>1</sup>Amap, Alibaba Group,
-                <sup>2</sup>Peking University<br/>
+                <!-- <sup>2</sup>Peking University<br/> -->
                 <!-- <img src="images/janusvln/amap.png" alt="Amap Logo" style="height: 50px; background-color: white; padding: 3px; border-radius: 3px; margin-top: 5px;" /> -->
                 <!-- <img src="images/janusvln/xjtu.png" alt="XJTU Logo" style="height: 50px; background-color: white; padding: 3px; border-radius: 3px; margin-top: 5px;" /> -->
             </p>
@@ -6939,13 +6956,13 @@
     <div class="abstract-container">
         <h2 class="abstract-title">Abstract</h2>
         <p class="abstract-text">
-            Embodied navigation in open, dynamic environments demands accurate foresight of how the world will evolve and how actions will unfold over time. We introduce a unified generative world model that jointly reasons about future visual states and action sequences within a unified probabilistic framework. Our approach integrates a diffusion-based video generator with a vision-language policy, enabling synchronized rollouts where predicted scenes and planned actions are updated together. Training optimizes two complementary objectives: generating action-conditioned multi-step visual predictions and deriving trajectories conditioned on those predicted visuals. At inference, the model alternates between forecasting plausible future frames and refining the action plan given both language instructions and evolving visual rollouts. This bidirectional constraint makes visual predictions executable and keeps decisions grounded in physically consistent, task-relevant futures, mitigating cumulative errors common in decoupled “predict-then-plan” pipelines. Experiments across diverse embodied navigation benchmarks show improved trajectory accuracy and higher success rates. Ablations confirm the necessity of tight vision–action coupling and unified training, with either branch removal degrading both prediction quality and policy reliability. The model further provides interpretable, step-by-step future visualizations that expose planning rationale and uncertainties, facilitating diagnosis and robust deployment. Overall, by unifying foresight and control within a single generative model, we move closer to reliable, interpretable, and general-purpose embodied agents that operate robustly in open-ended real-world settings.
+            Lifelong embodied navigation requires agents to accumulate, retain, and exploit spatial–semantic experience across tasks, enabling efficient exploration in novel environments and rapid goal reaching in familiar ones. While object-centric memory is interpretable, it depends on detection and reconstruction pipelines that limit robustness and scalability. We propose an image-centric memory framework that achieves long-term implicit memory via an efficient visual context compression module end-to-end coupled with a Qwen2.5-VL–based navigation policy. Built atop a ViT backbone with frozen DINOv3 features and lightweight PixelUnshuffle+Conv blocks, our visual tokenizer reduces native vision tokens by roughly 10–20×, representing each image with about 30 tokens and allowing the agent to maintain hundreds of historical frames within a single context. Experimental results on GOAT-Bench and HM3D-OVON show that our method achieves state-of-the-art navigation performance, improving exploration in unfamiliar environments and shortening paths in familiar ones. Ablation studies further reveal that moderate compression provides the best balance between efficiency and accuracy. These findings position compressed image-centric memory as a practical and scalable interface for lifelong embodied agents, enabling them to reason over long visual histories and navigate with human-like efficiency.    
         </p>
     </div>
 </div>
 
 <!-- Video Showcase Section -->
-<div class="video-showcase-section" id="video-showcase">
+<!-- <div class="video-showcase-section" id="video-showcase">
     <div class="video-showcase-container">
         <div class="video-header">
             <h2 class="video-title">Demo Video</h2>
@@ -6964,6 +6981,34 @@
         </div>
 
     </div>
+</div> -->
+
+<div class="what-is-section" id="what-is">
+    <div class="what-is-container">
+        <h2 class="what-is-title">Motivation</h2>
+
+        <!-- Approach图片 -->
+            <div class="approach-image-container">
+                <img src="images/teaser.jpg" alt="JanusVLN Framework Approach" class="approach-image" />
+            </div>
+
+        <!-- 新的横向布局 -->
+        <div class="horizontal-demo-container">
+            <div class="demo-row">
+                <!-- <div class="demo-row-background"> -->
+                    <div class="demo-label-horizontal">
+                        
+                        <!-- <span class="label-text">Our agent operates in a lifelong learning setting. For the initial task in an unseen environment, it uses frontier-based exploration to locate the target. Critically, the environment and agent state are preserved across tasks. For subsequent instructions, the agent first consults its memory. If the target object has been previously observed, the agent plans a direct path to its location, bypassing the need for re-exploration.</span> -->
+                        <span class="abstract-text-1">Our agent operates in a lifelong learning setting. For the initial task in an unseen environment, it uses frontier-based exploration to locate the target. Critically, the environment and agent state are preserved across tasks. For subsequent instructions, the agent first consults its memory. If the target object has been previously observed, the agent plans a direct path to its location, bypassing the need for re-exploration.</span>
+                    </div>
+                    
+                <!-- </div> -->
+            </div>
+            
+
+            
+        </div>
+    </div>
 </div>
 
 <div class="what-is-section" id="what-is">
@@ -6972,22 +7017,21 @@
 
         <!-- Approach图片 -->
             <div class="approach-image-container">
-                <img src="images/overview.jpg" alt="JanusVLN Framework Approach" class="approach-image" />
+                <img src="images/model_figure.jpg" alt="JanusVLN Framework Approach" class="approach-image" />
             </div>
 
         <!-- 新的横向布局 -->
         <div class="horizontal-demo-container">
             <div class="demo-row">
-                <div class="demo-row-background">
+                <!-- <div class="demo-row-background"> -->
                     <div class="demo-label-horizontal">
                         
-                        <span class="label-text">An overview of our AstraNav-World architecture. Our model is composed of three jointly trained modules: (a) a VLM planner
-(τθ) that processes instructions and visual history to generate high-level conditioning tokens; (b) a Diffusion Policy (ϕθ) that generates
-future actions based on the VLM’s guidance; and (c) a VLM-conditioned Video Generator (υθ) that predicts future visual scenes consistent
-with the VLM’s plan.</span>
+                        <!-- <span class="label-text">Overview of AstraNav-Memory with the proposed compressed vision encoder. During navigation, up to 300 images are first encoded by a DINOv3 ViT into 598 visual tokens, which are then compressed by several lightweight compression heads into 30 tokens compatible with the original Qwen2.5-VL ViT. The compact visual tokens and the language command are fed into Qwen2.5-VL-3B, enabling long-horizon navigation reasoning over large visual memories at low computational cost.</span> -->
+                        <!-- <span class="label-text">Overview of AstraNav-Memory with the proposed compressed vision encoder. During navigation, up to 300 images are first encoded by a DINOv3 ViT into 598 visual tokens, which are then compressed by several lightweight compression heads into 30 tokens compatible with the original Qwen2.5-VL ViT. The compact visual tokens and the language command are fed into Qwen2.5-VL-3B, enabling long-horizon navigation reasoning over large visual memories at low computational cost.</span> -->
+                        <span class="abstract-text-1">Overview of AstraNav-Memory with the proposed compressed vision encoder. During navigation, up to 300 images are first encoded by a DINOv3 ViT into 598 visual tokens, which are then compressed by several lightweight compression heads into 30 tokens compatible with the original Qwen2.5-VL ViT. The compact visual tokens and the language command are fed into Qwen2.5-VL-3B, enabling long-horizon navigation reasoning over large visual memories at low computational cost.</span>
                     </div>
                     
-                </div>
+                <!-- </div> -->
             </div>
             
 
@@ -7003,22 +7047,30 @@ with the VLM’s plan.</span>
             <h2 class="overview-title">Experiment</h2>
 
             <div class="approach-image-container">
-                <img src="images/experiment_1.jpg" alt="results" class="approach-image" />
+                <img src="images/e_1.png" alt="results" class="approach-image" />
             </div>
 
             <div class="approach-image-container">
-                <img src="images/experiment_2.jpg" alt="results" class="approach-image" />
+                <img src="images/e_2.png" alt="results" class="approach-image" />
             </div>
 
             <div class="approach-image-container">
-                <img src="images/experiment_3.jpg" alt="results" class="approach-image" />
+                <img src="images/e_3.png" alt="results" class="approach-image" />
+            </div>
+
+            <div class="approach-image-container">
+                <img src="images/e_4.png" alt="results" class="approach-image" />
+            </div>
+
+            <div class="approach-image-container">
+                <img src="images/e_5.png" alt="results" class="approach-image" />
             </div>
         </div>
     </div>
 </div>
 
 <!-- 新增：Technical Overview Section - 全栏设计 -->
-<div class="technical-overview-section" id="overview">
+<!-- <div class="technical-overview-section" id="overview">
     <div class="overview-container">
         <div class="overview-header">
             <h2 class="overview-title">Real-World Visualization</h2>
@@ -7026,8 +7078,8 @@ with the VLM’s plan.</span>
         </div>
 
         <!-- 新增：双栏视频网格容器 -->
-        <div class="video-grid-2col">
-            <div class="video-grid-item">
+        <!-- <div class="video-grid-2col"> -->
+            <!-- <div class="video-grid-item">
                 <video controls autoplay muted loop playsinline>
                     <source src="videos/real_world/1_o.mp4" type="video/mp4">
                     Your browser does not support the video tag.
@@ -7068,9 +7120,9 @@ with the VLM’s plan.</span>
                     Your browser does not support the video tag.
                 </video>
             </div>
-        </div>
+        </div> -->
     </div>
-</div>
+<!-- </div> -->
 
 <div class="technical-overview-section" id="overview">
     <div class="overview-container">
@@ -7082,42 +7134,42 @@ with the VLM’s plan.</span>
         <div class="video-grid-2col">
             <div class="video-grid-item">
                 <video controls autoplay muted loop playsinline>
-                    <source src="videos/VLN-CE/R2R_1.mp4" type="video/mp4">
+                    <source src="images/v_1.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
 
             <div class="video-grid-item">
                 <video controls autoplay muted loop playsinline>
-                    <source src="videos/VLN-CE/R2R_2.mp4" type="video/mp4">
+                    <source src="images/v_2.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
             
             <div class="video-grid-item">
                 <video controls autoplay muted loop playsinline>
-                    <source src="videos/VLN-CE/OVON_1_o.mp4" type="video/mp4">
+                    <source src="images/v_3.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
 
             <div class="video-grid-item">
                 <video controls autoplay muted loop playsinline>
-                    <source src="videos/VLN-CE/OVON_2_o.mp4" type="video/mp4">
+                    <source src="images/v_4.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
 
             <div class="video-grid-item">
                 <video controls autoplay muted loop playsinline>
-                    <source src="videos/VLN-CE/OVON_3_o.mp4" type="video/mp4">
+                    <source src="images/v_5.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
 
             <div class="video-grid-item">
                 <video controls autoplay muted loop playsinline>
-                    <source src="videos/VLN-CE/RxR.mp4" type="video/mp4">
+                    <source src="images/v_6.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
